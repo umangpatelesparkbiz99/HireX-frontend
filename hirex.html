@@ -23,7 +23,8 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="hirex.css">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>HireX — Award Winning Digital Agency</title>
 </head>
 
 <body>
@@ -31,29 +32,64 @@
         <header>
             <div class="container">
                 <div id="wraper-header">
-                    <div class="row">
+                    <div class="row" id="header-row">
                         <div class="col">
                             <h3 id="logo">
                                 HireX.
                             </h3>
                         </div>
-                        <div class="col d-flex justify-content-end gap-3 nav-links">
-                            <div class=" d-flex gap-3 mb-0 align-items-center">
 
+                        <!-- Desktop nav (hidden below 1200px) -->
+                        <div class="col d-none d-xl-flex justify-content-end align-items-center gap-3 nav-links">
+                            <div class="d-flex gap-2 mb-0 align-items-center">
                                 <p class="mb-0">Works</p>
                                 <p class="mb-0">About us</p>
                                 <p class="mb-0">Blogs</p>
                                 <p class="mb-0">FAQs</p>
                                 <p class="mb-0">Contact us</p>
                             </div>
-                            <button class="btn text-white bg-black">We're Hiring <i
-                                    class="fa-solid fa-arrow-right"></i></button>
+                            <button class="btn text-white bg-black">We're Hiring <i class="fa-solid fa-arrow-right"></i></button>
+                            <button class="btn btn-outline-dark d-flex align-items-center justify-content-center" id="theme-toggle" style="width: 40px; height: 40px; border-radius: 50%;" title="Toggle Theme">
+                                <i class="fa-solid fa-moon"></i>
+                            </button>
+                        </div>
+
+                        <!-- Mobile/Tablet: theme toggle + hamburger (hidden above 1200px) -->
+                        <div class="col d-flex d-xl-none justify-content-end align-items-center gap-3">
+                            <button class="btn btn-outline-dark d-flex align-items-center justify-content-center" id="theme-toggle-mobile" style="width: 38px; height: 38px; border-radius: 50%;" title="Toggle Theme">
+                                <i class="fa-solid fa-moon"></i>
+                            </button>
+                            <button id="hamburger-btn" aria-label="Open menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
                         </div>
                     </div>
                 </div>
+
+        <!-- Mobile Nav Overlay -->
+        <div id="mobile-nav-overlay">
+            <div id="mobile-nav-inner">
+                <div id="mobile-nav-header">
+                    <h3 id="mobile-nav-logo">HireX.</h3>
+                    <button id="mobile-nav-close" aria-label="Close menu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <nav id="mobile-nav-links">
+                    <a href="#">Works</a>
+                    <a href="#">About us</a>
+                    <a href="#">Blogs</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Contact us</a>
+                </nav>
+                <button class="btn text-white bg-black mt-4" style="width: 100%; padding: 14px; font-size: 16px; font-weight: 700;">We're Hiring <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
             </div>
         </header>
-        <!-- section 1 -->
+        <!-- Hero Section: Main value proposition and call to action -->
         <div class="container" style="  margin-top: 35px;">
             <div class="wrapper-page1">
 
@@ -83,6 +119,21 @@
                             <button type="submit" class="submit-btn">Request access</button>
                         </div>
 
+                        <!-- Mobile-only stats strip (hidden on desktop) -->
+                        <div id="hero-stats-strip" class="d-flex d-lg-none">
+                            <div class="hero-stat-card" style="background-color: #FC7F3A;">
+                                <span class="hero-stat-number">200+</span>
+                                <span class="hero-stat-label">Projects Done</span>
+                            </div>
+                            <div class="hero-stat-card" style="background-color: #000;">
+                                <span class="hero-stat-number" style="color:#FFBB38;">120+</span>
+                                <span class="hero-stat-label" style="color:#fff;">Happy Clients</span>
+                            </div>
+                            <div class="hero-stat-card" style="background-color: #389B48;">
+                                <span class="hero-stat-number">5.0 ★</span>
+                                <span class="hero-stat-label">Rating</span>
+                            </div>
+                        </div>
 
                         <br>
                         <div style="height: 66px; width: 272px">
@@ -169,7 +220,7 @@
         </div>
 
 
-        <!-- section-2  -->
+        <!-- Services Section: Highlighting the agency's primary offerings -->
         <section style="margin-top: 125px;">
 
             <div class="container">
@@ -226,7 +277,7 @@
         </section>
 
 
-        <!-- section-3  -->
+        <!-- Portfolio / Works Section: Showcasing recent case studies and projects -->
         <section style="margin-top: 125px;">
             <div class="container">
                 <div class="section-3-wrapper">
@@ -286,7 +337,7 @@
             </div>
         </section>
 
-        <!-- section-4  -->
+        <!-- Pricing Plans Section: Displaying subscription tiers (Free, Basic, Pro) -->
         <section style="margin-top: 125px;">
 
             <div class="container">
@@ -301,7 +352,7 @@
 
                     <div class="row gap-3">
                         <!-- plan-1 FREE  -->
-                        <div class="col plan-coston-card">
+                        <div class="col plan-coston-card" id="plan-free">
                             <h2 class="plan-card-title">FREE</h2>
                             <br>
 
@@ -329,8 +380,8 @@
                                 STARTED</button>
                         </div>
                         <!-- Plan-2 Basic  -->
-                        <div class="col plan-coston-card"
-                            style="background-color: black; color: white; margin-top: -30px;">
+                        <div class="col plan-coston-card plan-active" id="plan-basic"
+                            style="background-color: black; color: white;">
                             <h2 class="plan-card-title">BASIC</h2>
                             <br>
 
@@ -360,7 +411,7 @@
                                 STARTED</button>
                         </div>
                         <!-- Plan-3 Pro  -->
-                        <div class="col plan-coston-card">
+                        <div class="col plan-coston-card" id="plan-pro">
                             <h2 class="plan-card-title">PRO</h2>
                             <br>
 
@@ -394,7 +445,7 @@
         </section>
 
 
-        <!-- section-5  -->
+        <!-- Testimonial Section: Customer review and credibility booster -->
         <section id="section-5">
             <div class="container ">
                 <div class="section-5-wrapper">
@@ -433,7 +484,7 @@
         </section>
 
 
-        <!-- section-6  -->
+        <!-- Blog / News Section: Recent updates and articles -->
         <section style="margin-top: 125px;">
             <div class="container">
                 <div class="section-6-wrapper" style="display: flex; flex-direction: column;">
@@ -467,7 +518,7 @@
             </div>
         </section>
 
-        <!-- section-7 -->
+        <!-- Subscription Section: Newsletter signup and call to action -->
 
         <section id="section-7">
             <div class="container">
@@ -501,7 +552,7 @@
             </div>
         </section>
 
-        <!-- clean  -->
+        <!-- Marquee / Footer Banner -->
         <section style="background-color: #000000; display: flex; ">
 
             <div class="marquee-x-wrapper">
@@ -539,7 +590,7 @@
 
         </section>
 
-        <!-- section-8 -->
+        <!-- Main Footer Section: Links, Resources, and Terms -->
 
         <footer style="margin-top: 100px;">
             <div class="container">
@@ -579,6 +630,59 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        /* ── Desktop theme toggle ── */
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        /* ── Mobile theme toggle ── */
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const body = document.body;
+
+        function applyTheme(isDark) {
+            if (isDark) {
+                body.classList.add('dark-mode');
+                if (themeToggleBtn)    { themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';    themeToggleBtn.classList.replace('btn-outline-dark','btn-outline-light'); }
+                if (themeToggleMobile) { themeToggleMobile.innerHTML = '<i class="fa-solid fa-sun"></i>'; themeToggleMobile.classList.replace('btn-outline-dark','btn-outline-light'); }
+            } else {
+                body.classList.remove('dark-mode');
+                if (themeToggleBtn)    { themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';    themeToggleBtn.classList.replace('btn-outline-light','btn-outline-dark'); }
+                if (themeToggleMobile) { themeToggleMobile.innerHTML = '<i class="fa-solid fa-moon"></i>'; themeToggleMobile.classList.replace('btn-outline-light','btn-outline-dark'); }
+            }
+        }
+
+        if (themeToggleBtn)    themeToggleBtn.addEventListener('click',    () => applyTheme(!body.classList.contains('dark-mode')));
+        if (themeToggleMobile) themeToggleMobile.addEventListener('click', () => applyTheme(!body.classList.contains('dark-mode')));
+
+        /* ── Hamburger menu ── */
+        const hamburgerBtn   = document.getElementById('hamburger-btn');
+        const mobileOverlay  = document.getElementById('mobile-nav-overlay');
+        const mobileClose    = document.getElementById('mobile-nav-close');
+
+        function openMenu()  { mobileOverlay.classList.add('open');  document.body.style.overflow = 'hidden'; }
+        function closeMenu() { mobileOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        mobileClose.addEventListener('click', closeMenu);
+        mobileOverlay.addEventListener('click', (e) => { if (e.target === mobileOverlay) closeMenu(); });
+
+        /* Close menu on any nav link click */
+        document.querySelectorAll('#mobile-nav-links a').forEach(a => a.addEventListener('click', closeMenu));
+
+        /* ── Pricing card hover elevation ── */
+        const pricingCards = document.querySelectorAll('.plan-coston-card');
+        const defaultActive = document.getElementById('plan-basic');
+
+        pricingCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                pricingCards.forEach(c => c.classList.remove('plan-active'));
+                card.classList.add('plan-active');
+            });
+            card.addEventListener('mouseleave', () => {
+                pricingCards.forEach(c => c.classList.remove('plan-active'));
+                if (defaultActive) defaultActive.classList.add('plan-active');
+            });
+        });
+    </script>
 </body>
 
 </html>

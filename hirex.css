@@ -20,6 +20,9 @@
     margin-top: 34px;
 }
 
+/* =========================================
+   Inquiry Form Styles
+   ========================================= */
 #inqurey-form {
     border-right: 10px solid #000;
     border-bottom: 10px solid #000;
@@ -65,6 +68,9 @@
     background-color: #e6a12c;
 }
 
+/* =========================================
+   Hero Section Decorative Shapes
+   ========================================= */
 .circle {
     height: 200px;
     width: 200px;
@@ -106,6 +112,9 @@
     margin-top: -50px;
 }
 
+/* =========================================
+   Attention Bar & Infinite Marquee
+   ========================================= */
 #attention-cart {
     display: flex;
     border: 2px solid black;
@@ -190,6 +199,9 @@
     margin: 0 10px;
 }
 
+/* =========================================
+   Section Layouts & General Headings
+   ========================================= */
 #section-2-wrapper {
     display: flex;
     flex-direction: column;
@@ -218,6 +230,9 @@
     text-align: center;
 }
 
+/* =========================================
+   Service / Feature Cards
+   ========================================= */
 .coston-card {
     height: 512px;
     width: 370px;
@@ -227,6 +242,7 @@
     justify-content: center;
     background-color: #EBE9DE;
     border-radius: 10px;
+    padding: 28px 20px;
 }
 
 .card-title {
@@ -253,6 +269,9 @@ ul {
     list-style: none;
 }
 
+/* =========================================
+   Pricing Plan Cards
+   ========================================= */
 .plan-card-title {
 
     font-family: Sporting Grotesque;
@@ -309,12 +328,17 @@ hr {
     padding: 15px 25px;
     font-size: 16px;
     font-weight: 700;
-    width: 308px;
+    width: 85%;
+    max-width: 308px;
     cursor: pointer;
     font-family: sans-serif;
     transition: background-color 0.2s;
+    margin-top: 8px;
 }
 
+/* =========================================
+   Section 6: Blog & Resources
+   ========================================= */
 #section-6-btn-II {
     height: 30px;
     width: 130px;
@@ -367,6 +391,9 @@ height: 30px;
     line-height: 15px;
     letter-spacing: -2%;
 }
+/* =========================================
+   Section 7: Subscribe & Values
+   ========================================= */
 .section-7-values{
     font-family: Sporting Grotesque;
         font-weight: 700;
@@ -383,6 +410,9 @@ height: 30px;
         margin-bottom: 10px;
         background-color: transparent;
 }
+/* =========================================
+   Footer Typography & Layout
+   ========================================= */
 .footer-p{
     font-family: Inter;
         font-weight: 500;
@@ -437,6 +467,9 @@ height: 30px;
     display: flex;
         justify-content: space-between;
 }
+/* =========================================
+   Section 5: Highlight / Testimonial
+   ========================================= */
 #section-5{
     background-color: #64E379;
         height: 635px;
@@ -499,6 +532,9 @@ height: 30px;
         line-height: 36px;
         letter-spacing: 0%;
 }
+/* =========================================
+   Other Container Utilities
+   ========================================= */
 #section-4-container{
     width: 350px;
         height: 168px;
@@ -562,4 +598,953 @@ height: 30px;
         font-size: 16px;
         line-height: 13px;
         letter-spacing: -2%;
+}
+/* Tablet & Mobile Responsiveness - ADDED BELOW */
+@media (max-width: 1199px) {
+    /* Stack rows on smaller screens */
+    .row {
+        flex-direction: column !important;
+        gap: 30px;
+    }
+    
+    /* Make columns take full width when stacked */
+    .col, .col-8 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        margin: 0 !important;
+        padding: 0 15px !important;
+    }
+
+    /* Header — hamburger layout (used up to 1199px) */
+    #header-row {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        gap: 0 !important;
+    }
+    /* Logo col — takes all available space */
+    #header-row > .col:first-child {
+        flex: 1 1 auto !important;
+        width: auto !important;
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    /* Desktop nav col — hidden, collapse it */
+    #header-row > .col.d-none {
+        flex: 0 0 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    /* Hamburger + theme toggle col — shrinks to fit, stays right */
+    #header-row > .col:last-child {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        justify-content: flex-end !important;
+    }
+    
+    /* Hero section */
+    h1[style*="font-size: 84px"] {
+        font-size: 54px !important;
+        line-height: 1.2 !important;
+    }
+    .wrapper-page1 .col-8 {
+        text-align: center;
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+    .wrapper-page1 .col-8 span {
+        justify-content: center;
+    }
+
+
+    /* Hide hero shapes on tablet/mobile — cleaner without them */
+    .wrapper-page1 .col {
+        display: none !important;
+    }
+
+    /* Mobile-only stats strip */
+    #hero-stats-strip {
+        gap: 12px;
+        margin-top: 28px;
+        width: 100%;
+        justify-content: center;
+    }
+    .hero-stat-card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 18px 10px;
+        border-radius: 14px;
+        box-shadow: 4px 4px 0px 0px #000;
+        border: 2px solid #000;
+        min-width: 0;
+        animation: statPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+    .hero-stat-card:nth-child(2) { animation-delay: 0.1s; }
+    .hero-stat-card:nth-child(3) { animation-delay: 0.2s; }
+
+    @keyframes statPop {
+        from { transform: translateY(20px); opacity: 0; }
+        to   { transform: translateY(0);   opacity: 1; }
+    }
+    .hero-stat-number {
+        font-family: Inter, sans-serif;
+        font-weight: 800;
+        font-size: 26px;
+        line-height: 1;
+        color: #fff;
+        display: block;
+    }
+    .hero-stat-label {
+        font-family: Inter, sans-serif;
+        font-weight: 500;
+        font-size: 11px;
+        color: #fff;
+        margin-top: 6px;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+
+    /* Hero Section - Form */
+    .form-container {
+        width: 100% !important;
+        max-width: 500px !important;
+        margin: 30px auto 0 auto !important;
+        flex-direction: column;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    .email-input {
+        width: 100% !important;
+        border: 2px solid #000 !important;
+        margin-bottom: 10px;
+    }
+    .submit-btn {
+        width: 100% !important;
+        border: 2px solid #000 !important;
+        box-shadow: 4px 4px 0px 0px #000000 !important;
+    }
+    
+    /* Open account box */
+    div[style*="height: 66px; width: 272px"] {
+        margin: 30px auto 0 auto !important;
+    }
+
+    /* ── Pricing & Plans Cards ── */
+    /* Keep the pricing row horizontal on tablet — override the global column rule */
+    #section-2-wrapper .row.gap-3 {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: flex-end !important;
+        gap: 16px !important;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+    /* Each pricing card: fixed width so 3 fit side by side on tablet */
+    #section-2-wrapper .row.gap-3 > .col.plan-coston-card {
+        flex: 0 0 auto !important;
+        width: calc(33% - 12px) !important;
+        max-width: 260px !important;
+        min-width: 200px !important;
+        height: auto !important;
+        min-height: 540px !important;
+        margin: 0 !important;
+        padding-bottom: 20px;
+    }
+    /* Disable elevation pop-up on tablet — no room for it */
+    #section-2-wrapper .col.plan-coston-card.plan-active {
+        transform: translateY(-20px) !important;
+    }
+    /* Services section cards (section 2 "how it works") stay full-width stacked */
+    .coston-card {
+        width: 100% !important;
+        max-width: 370px !important;
+        height: auto !important;
+        min-height: 512px !important;
+        margin: 0 auto !important;
+        padding-bottom: 20px;
+    }
+
+    /* ── Section 3 (Works) ── */
+    .section-3-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+    }
+    .section-3-container {
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    /* Break the fixed-size works container */
+    .container[style*="width: 970px"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+    /* Stack the two columns */
+    .container[style*="width: 970px"] > .row {
+        flex-direction: column !important;
+        gap: 40px !important;
+    }
+    .container[style*="width: 970px"] .col {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    /* Images fluid */
+    .container[style*="width: 970px"] img {
+        width: 100% !important;
+        height: 280px !important;
+        max-width: 100% !important;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+        margin: 0 auto;
+    }
+    /* Text blocks inside works cards */
+    div[style*="margin-left: 20px; margin-top: 40px;"] {
+        margin-left: 0 !important;
+        margin-top: 24px !important;
+        text-align: center;
+        padding: 0 8px;
+    }
+    /* View All button — center it when stacked */
+    .container[style*="width: 970px"] .ms-auto {
+        margin: 24px auto 0 auto !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    /* Images */
+    img[src*="Rectangle 17"], img[src*="Rectangle 19"], img[src*="Rectangle 20"] {
+        height: auto !important;
+        width: 100% !important;
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
+        object-fit: cover;
+    }
+    
+    /* Section 5 Testimonial */
+    #section-5 {
+        height: auto !important;
+        padding-bottom: 50px;
+    }
+    .section-5-wrapper {
+        padding-top: 50px;
+    }
+    #section-5-col {
+        margin-top: 60px;
+        text-align: center;
+    }
+    #section-5-btn {
+        margin: -25px auto 0 auto !important;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Section 6 Blog */
+    .section-6-wrapper {
+        text-align: center;
+    }
+    .section-6-wrapper .col > div {
+        margin: 20px auto !important;
+    }
+
+    /* Section 7 Subscribe */
+    #section-7 {
+        height: auto !important;
+        padding: 50px 0;
+    }
+    #section-7-row {
+        text-align: center;
+    }
+    .section-7-wraper .mt-5[style*="width: 500px"] {
+        width: 100% !important;
+        max-width: 500px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Footer */
+    footer .row {
+        text-align: center;
+    }
+    #terms-and-conditions {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-top: 50px !important;
+    }
+
+    /* Utilities */
+    .section-heding {
+        font-size: 32px !important;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 767px) {
+
+    /* Prevent horizontal overflow */
+    html, body {
+        overflow-x: hidden !important;
+    }
+
+    /* Global padding so nothing sticks to screen edges */
+    .container, .container-fluid {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    /* Sections that use full-width bg colours need inner padding */
+    section, footer, header {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* #wraper-header inner padding */
+    #wraper-header {
+        padding: 0 16px;
+    }
+
+    /* All columns get safe side padding */
+    .col, .col-8, [class^="col-"] {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    h1[style*="font-size: 84px"] {
+        font-size: 38px !important;
+        line-height: 1.2 !important;
+    }
+    #logo {
+        font-size: 28px !important;
+    }
+    .landingpage-text {
+        font-size: 18px !important;
+    }
+    .card-info-title span {
+        font-size: 40px !important;
+    }
+    .section-heding {
+        font-size: 28px !important;
+    }
+
+    /* Form takes full width with breathing room */
+    .form-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex-direction: column;
+        box-shadow: none !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    .email-input {
+        width: 100% !important;
+        border: 2px solid #000 !important;
+        margin-bottom: 10px;
+        border-radius: 0;
+    }
+    .submit-btn {
+        width: 100% !important;
+        box-shadow: 4px 4px 0px 0px #000 !important;
+    }
+
+    /* ── Pricing Cards: Horizontal Swipe Carousel on phone ── */
+    #section-4-container {
+        text-align: center;
+        padding: 0 16px;
+    }
+
+    /* Outer wrapper: full width, horizontal scroll */
+    #section-2-wrapper .row.gap-3 {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: visible !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 14px !important;
+        padding: 20px 16px 32px 16px !important;
+        margin: 0 -16px !important;
+        /* Smooth momentum scroll on iOS */
+        -webkit-overflow-scrolling: touch;
+        /* Hide scrollbar but keep functionality */
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+    }
+    #section-2-wrapper .row.gap-3::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Each card: fixed width, auto height, snaps */
+    #section-2-wrapper .row.gap-3 > .col.plan-coston-card {
+        flex: 0 0 80vw !important;
+        width: 80vw !important;
+        max-width: 300px !important;
+        min-width: 240px !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 24px 20px 24px !important;
+        scroll-snap-align: center;
+        border-radius: 16px !important;
+    }
+
+    /* No elevation transform on phone */
+    #section-2-wrapper .col.plan-coston-card.plan-active,
+    #section-2-wrapper .col.plan-coston-card {
+        transform: none !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    /* Highlight active card with a top colored bar instead of elevation */
+    #section-2-wrapper .col.plan-coston-card.plan-active {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18) !important;
+        border-top: 4px solid #FC7F3A !important;
+    }
+
+    /* Scroll hint dots below carousel */
+    #section-2-wrapper .row.gap-3::after {
+        content: "← swipe to see plans →";
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        color: #888;
+        margin-top: 8px;
+        flex-shrink: 0;
+        align-self: flex-end;
+    }
+
+    /* Button inside card full-width */
+    #section-2-wrapper .plan-submit-btn {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Services cards */
+    .coston-card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+
+    /* Works section (phone) — images shorter */
+    .container[style*="width: 970px"] img {
+        height: 200px !important;
+    }
+
+    /* Hero shapes hidden on mobile (already hidden via tablet query) */
+
+    /* Section 5 image full width */
+    #section-5 .col img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 350px;
+        object-fit: cover;
+    }
+
+    /* Section 6 images full width */
+    .section-6-wrapper img {
+        width: 100% !important;
+        height: 220px !important;
+        object-fit: cover;
+    }
+
+    /* Section 7 form fields */
+    .mt-5[style*="width: 500px"] {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Footer */
+    .footer-h4 {
+        font-size: 18px !important;
+    }
+    #terms-and-conditions {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+}
+
+
+/* ─── PRICING CARD ELEVATION & COLOR SWITCH ─── */
+
+/* Row that holds the 3 pricing cards — give it vertical breathing room for the lift */
+#section-2-wrapper .row.gap-3 {
+    align-items: flex-end;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+/* All cards — base state (cream/inactive) */
+.plan-coston-card {
+    transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.38s ease,
+                background-color 0.35s ease,
+                color 0.35s ease;
+    transform: translateY(0);
+    cursor: pointer;
+    /* Override any inline bg so inactive cards are always cream */
+    background-color: #EBE9DE !important;
+    color: #111 !important;
+}
+
+/* All text/icons inside inactive cards stay dark */
+.plan-coston-card h1,
+.plan-coston-card h2,
+.plan-coston-card h5,
+.plan-coston-card p,
+.plan-coston-card li,
+.plan-coston-card i {
+    color: #111 !important;
+    transition: color 0.35s ease;
+}
+
+/* hr inside inactive cards — dark border */
+.plan-coston-card hr {
+    border-top-color: #000 !important;
+    transition: border-top-color 0.35s ease;
+}
+
+/* Button shadow inside inactive cards */
+.plan-coston-card .plan-submit-btn {
+    box-shadow: 4px 4px 0 0 #000 !important;
+    transition: box-shadow 0.35s ease;
+}
+
+/* ── ACTIVE (elevated) state — goes dark ── */
+.plan-coston-card.plan-active {
+    transform: translateY(-36px);
+    background-color: #000 !important;
+    color: #fff !important;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* All text/icons inside the active card go white */
+.plan-coston-card.plan-active h1,
+.plan-coston-card.plan-active h2,
+.plan-coston-card.plan-active h5,
+.plan-coston-card.plan-active p,
+.plan-coston-card.plan-active li,
+.plan-coston-card.plan-active i {
+    color: #fff !important;
+}
+
+/* hr inside active card — white border */
+.plan-coston-card.plan-active hr {
+    border-top-color: #fff !important;
+}
+
+/* Button shadow inside active card — white shadow */
+.plan-coston-card.plan-active .plan-submit-btn {
+    box-shadow: 4px 4px 0 0 #fff !important;
+}
+
+/* ─── HAMBURGER BUTTON ─── */
+
+#hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border: 2px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, border-color 0.2s;
+}
+#hamburger-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+}
+#hamburger-btn:hover {
+    background-color: #000;
+}
+#hamburger-btn:hover span {
+    background-color: #fff;
+}
+
+/* ─── MOBILE NAV OVERLAY ─── */
+#mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+#mobile-nav-overlay.open {
+    display: flex;
+    animation: overlayFadeIn 0.3s ease forwards;
+}
+
+@keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#mobile-nav-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 28px 24px 36px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    transform: translateY(-100%);
+    animation: slideDown 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+#mobile-nav-overlay.open #mobile-nav-inner {
+    transform: translateY(0);
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to   { transform: translateY(0); }
+}
+
+#mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+#mobile-nav-logo {
+    font-family: 'Clash Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    margin: 0;
+}
+#mobile-nav-close {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#mobile-nav-close:hover {
+    background: #000;
+    color: #fff;
+}
+#mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+#mobile-nav-links a {
+    font-family: Inter, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #111;
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.2s, padding-left 0.2s;
+}
+#mobile-nav-links a::after {
+    content: '→';
+    font-size: 18px;
+    color: #aaa;
+    transition: color 0.2s, transform 0.2s;
+}
+#mobile-nav-links a:hover {
+    color: #FC7F3A;
+    padding-left: 6px;
+}
+#mobile-nav-links a:hover::after {
+    color: #FC7F3A;
+    transform: translateX(4px);
+}
+
+/* Dark mode: hamburger & mobile nav */
+body.dark-mode #hamburger-btn {
+    border-color: #fff;
+}
+body.dark-mode #hamburger-btn span {
+    background-color: #fff;
+}
+body.dark-mode #hamburger-btn:hover {
+    background-color: #fff;
+}
+body.dark-mode #hamburger-btn:hover span {
+    background-color: #000;
+}
+body.dark-mode #mobile-nav-inner {
+    background: #1a1a1a;
+}
+body.dark-mode #mobile-nav-logo {
+    color: #fff;
+}
+body.dark-mode #mobile-nav-close {
+    border-color: #fff;
+    color: #fff;
+}
+body.dark-mode #mobile-nav-close:hover {
+    background: #fff;
+    color: #000;
+}
+body.dark-mode #mobile-nav-links a {
+    color: #eee;
+    border-bottom-color: #333;
+}
+body.dark-mode #mobile-nav-links a:hover {
+    color: #FC7F3A;
+}
+
+/* ── 992–1199px: Desktop nav polish (shows from 1200px, this range uses hamburger) ── */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Ensure header stays single row */
+    #header-row {
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+    /* Logo stays left */
+    #header-row > .col:first-child {
+        flex: 0 0 auto !important;
+        width: auto !important;
+    }
+    /* Hamburger/theme side stays right */
+    #header-row > .col:last-child {
+        flex: 0 0 auto !important;
+        width: auto !important;
+    }
+    /* Hero heading a bit smaller */
+    h1[style*="font-size: 84px"] {
+        font-size: 48px !important;
+    }
+    /* Give hero section more breathing room */
+    .wrapper-page1 {
+        margin-top: 20px;
+    }
+    /* Section margins tighter on tablet */
+    section[style*="margin-top: 125px"] {
+        margin-top: 70px !important;
+    }
+}
+
+/* ─── DARK THEME ─── */
+
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li {
+    color: #ffffff !important;
+}
+
+/* Preserve specific text colors like attention bar */
+body.dark-mode .attention-text {
+    color: #ffffff !important;
+}
+body.dark-mode .separator {
+    color: #FC7F3A !important; 
+}
+body.dark-mode .service-title {
+    color: #ffffff !important;
+}
+
+/* Inputs and Forms */
+body.dark-mode .form-container {
+    background-color: #2c2c2c !important;
+    border-color: #ffffff !important;
+    box-shadow: 4px 4px 0px 0px #ffffff !important;
+}
+body.dark-mode .email-input {
+    background-color: #2c2c2c !important;
+    color: #ffffff !important;
+}
+body.dark-mode .email-input::placeholder {
+    color: #aaaaaa !important;
+}
+
+/* Cards — Services */
+body.dark-mode .coston-card {
+    background-color: #2c2c2c !important;
+}
+
+/* ─── Pricing Cards Dark Mode ─── */
+
+/* Inactive pricing cards — dark charcoal, subtle border */
+body.dark-mode .plan-coston-card {
+    background-color: #1e1e1e !important;
+    color: #cccccc !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4) !important;
+}
+body.dark-mode .plan-coston-card h1,
+body.dark-mode .plan-coston-card h2,
+body.dark-mode .plan-coston-card h5,
+body.dark-mode .plan-coston-card p,
+body.dark-mode .plan-coston-card li,
+body.dark-mode .plan-coston-card i {
+    color: #cccccc !important;
+}
+body.dark-mode .plan-coston-card hr {
+    border-top-color: rgba(255, 255, 255, 0.12) !important;
+}
+body.dark-mode .plan-coston-card .plan-submit-btn {
+    box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Active/hovered card — WHITE popup, black text = max contrast on dark bg */
+body.dark-mode .plan-coston-card.plan-active {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 24px 60px rgba(255, 255, 255, 0.12),
+                0 0 0 2px #ffffff !important;
+}
+body.dark-mode .plan-coston-card.plan-active h1,
+body.dark-mode .plan-coston-card.plan-active h2,
+body.dark-mode .plan-coston-card.plan-active h5,
+body.dark-mode .plan-coston-card.plan-active p,
+body.dark-mode .plan-coston-card.plan-active li,
+body.dark-mode .plan-coston-card.plan-active i {
+    color: #000000 !important;
+}
+body.dark-mode .plan-coston-card.plan-active hr {
+    border-top-color: #000000 !important;
+}
+body.dark-mode .plan-coston-card.plan-active .plan-submit-btn {
+    box-shadow: 4px 4px 0 0 #000000 !important;
+}
+
+/* Borders and lines */
+body.dark-mode hr {
+    border-top-color: #ffffff !important;
+}
+
+/* Buttons */
+body.dark-mode .btn.bg-black {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+body.dark-mode .section-3-btn {
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+body.dark-mode .redme-a,
+body.dark-mode .section-3-a {
+    color: #ffffff !important;
+}
+body.dark-mode #section-6-btn-II,
+body.dark-mode #section-6-btn-I,
+body.dark-mode #section-7-btn-I {
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* Marquee / Specific containers */
+body.dark-mode #attention-cart {
+    border-color: #ffffff !important;
+}
+body.dark-mode .marquee-x-wrapper {
+    border-color: #ffffff !important;
+}
+
+/* Colored Sections */
+body.dark-mode #section-7 {
+    background-color: #333333 !important; /* Muted from bright yellow */
+}
+body.dark-mode #section-7-row a i {
+    color: #ffffff !important;
+}
+body.dark-mode #section-5 {
+    background-color: #1a4223 !important; /* Muted dark green from bright green */
+}
+
+/* Button hover effects in dark mode */
+body.dark-mode .submit-btn {
+    box-shadow: 4px 4px 0px 0px #ffffff !important;
+}
+body.dark-mode .plan-submit-btn {
+    box-shadow: 4px 4px 0px 0px #ffffff !important;
+}
+
+/* ─── Hero Stats Strip: vibrant dark mode colors ─── */
+
+/* Card 1: Orange → Deep Electric Purple */
+body.dark-mode #hero-stats-strip .hero-stat-card:nth-child(1) {
+    background-color: #7C3AED !important;
+    border-color: #9F67FF !important;
+    box-shadow: 4px 4px 0px 0px #9F67FF !important;
+}
+
+/* Card 2: Black → Warm Gold/Yellow — pops against dark background */
+body.dark-mode #hero-stats-strip .hero-stat-card:nth-child(2) {
+    background-color: #D97706 !important;
+    border-color: #FBBF24 !important;
+    box-shadow: 4px 4px 0px 0px #FBBF24 !important;
+}
+
+/* Card 3: Green → Electric Teal/Cyan */
+body.dark-mode #hero-stats-strip .hero-stat-card:nth-child(3) {
+    background-color: #0891B2 !important;
+    border-color: #22D3EE !important;
+    box-shadow: 4px 4px 0px 0px #22D3EE !important;
+}
+
+/* All numbers and labels stay white across all cards in dark mode */
+body.dark-mode #hero-stats-strip .hero-stat-number,
+body.dark-mode #hero-stats-strip .hero-stat-label {
+    color: #ffffff !important;
 }
